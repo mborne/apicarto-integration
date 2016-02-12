@@ -1,6 +1,6 @@
 # APICARTO intégration
 
-L'idée : Intégrer dans une base de données PostGIS les jeux de données ouverts présents sur http://data.gouv.fr pour pouvoir les exploiter :
+L'idée : Intégrer dans une base de données PostGIS les jeux de données ouverts et présents sur http://data.gouv.fr pour pouvoir les exploiter :
 * Visualiser les données
 * Effectuer des traitements SIG
 * Croiser les données
@@ -8,12 +8,12 @@ L'idée : Intégrer dans une base de données PostGIS les jeux de données ouver
 
 Attention :
 
-* Ce dépôt est pour utilisé pour l'instant pour de l'expérimentation (la structure de la base va varier, des schémas vont être ajoutés)
-* Les jeux de donnés ne sont pas (encore) utilisé dans l'API carto
+* Ce dépôt est utilisé pour l'instant pour de l'expérimentation (la structure de la base va varier, des schémas vont être ajoutés)
+* Les jeux de données ne sont pas (encore) utilisés dans l'API carto
 
 Questionnement :
 
-* Quelle est la licence de la base de données résultantes? Faut-il une variable d'environnement NO_ODBL pour pouvoir avoir une base résultante en licence ouverte?
+* Quelle est la licence de la base de données résultante ? Faut-il une variable d'environnement NO_ODBL pour pouvoir avoir une base résultante en licence ouverte?
 
 ### Variables d'environnement
 
@@ -65,7 +65,7 @@ PGUSER=apicarto PGPASSWORD=secretpassword sh import-all.sh
 
 * Les scripts shells sont maitrisés par la plupart des DBA postgres/postgis
 * Les shells ont la liberté d'appeler les outils de leur choix (exécutable, script python, grunt, jar, etc.)
-* ```psql``` supporte nativement les variables d'environnement PGHOST, PGUSER, PGPASSWORD cet qui permet une personnalisation suffisante
+* ```psql``` supporte nativement les variables d'environnement PGHOST, PGUSER, PGPASSWORD ce qui permet une personnalisation suffisante
 
 
 ## Où trouver les jeux de données?
