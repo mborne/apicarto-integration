@@ -2,12 +2,12 @@
 
 psql -d apicarto -f schema.sql
 
-for i in $(seq 1 9); 
+for i in $(seq 1 9);
 do
     sh import-dep.sh "0$i"
 done
 
-for i in $(seq 10 95); 
+for i in $(seq 10 95);
 do
     sh import-dep.sh "$i"
 done

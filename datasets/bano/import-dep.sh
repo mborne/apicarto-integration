@@ -2,6 +2,8 @@
 
 INSEE_DEP=$1
 
+echo "-- Import bano département $INSEE_DEP..."
+
 FILENAME=data/bano-$INSEE_DEP.csv
 URL=http://bano.openstreetmap.fr/data/bano-$INSEE_DEP.csv
 
@@ -12,8 +14,3 @@ fi
 
 sed 's/\[INSEE_DEP\]/'$INSEE_DEP'/g' import-dep.sql.in > data/import-$INSEE_DEP.sql
 psql -d apicarto -f data/import-$INSEE_DEP.sql
-
-
-
-
-
