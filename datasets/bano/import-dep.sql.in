@@ -1,0 +1,26 @@
+CREATE TEMP TABLE bano_temp (
+    id text,
+    numero text,
+    voie text,
+    code_post text,
+    nom_comm text,
+    source text,
+    lat real,
+    lon real
+);
+
+\copy bano_temp FROM data/bano-[INSEE_DEP].csv DELIMITER ',' CSV;
+
+DELETE FROM bano WHERE id LIKE '[INSEE_DEP]%';
+
+INSERT INTO bano ( id, numero, voie, code_post, nom_comm, source, geometry )
+    SELECT 
+        id,
+        numero,
+        voie,
+        code_post,
+        nom_comm,
+        source,
+        ST_SetSRID(ST_Point(lon,lat),4326)
+    FROM bano_temp
+;
