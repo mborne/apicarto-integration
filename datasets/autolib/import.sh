@@ -9,12 +9,8 @@ fi
 
 unzip -o autolib.zip
 
-shp2pgsql -c -d \
-    -s 4326 \
-    -g geometry \
-    stations_et_espaces_autolib.shp autolib > autolib.sql
+shp2pgsql -a -s 4326 -g geometry stations_et_espaces_autolib.shp autolib.station > station.sql
 
-psql --quiet -d apicarto -f autolib.sql
+psql --quiet -d apicarto -f schema.sql
+psql --quiet -d apicarto -f station.sql
 
-rm autolib.sql
-rm stations_et_espaces_autolib.*
