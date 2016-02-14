@@ -1,6 +1,7 @@
-DROP TABLE IF EXISTS organisme ;
+CREATE SCHEMA IF NOT EXISTS dila ;
 
-CREATE TABLE organisme (
+DROP TABLE IF EXISTS dila.organisme ;
+CREATE TABLE dila.organisme (
     id text primary key,
     type text,
     nom text,
@@ -16,5 +17,8 @@ CREATE TABLE organisme (
     accessibilite text,
     geometry geometry(Point,4326)
 ) ;
+
+-- TODO dila.commune
+
 
 

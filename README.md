@@ -58,8 +58,11 @@ PGUSER=apicarto PGPASSWORD=secretpassword sh import-all.sh
 
 ### datasets/[name]/import.sh
 
+* Forker le dépôt
 * Ajouter un dossier dans dataset correspondant au jeu de données
 * Créer un script "import.sh" qui télécharge les données et les importe dans la base "apicarto"
+* Ajouter un fichier .gitignore recensant les données téléchargées (le nettoyage des données téléchargées se repose sur lui)
+* Commiter les scripts et lancer une pull request!
 
 ### Pourquoi des shells?
 
@@ -82,10 +85,29 @@ En cas d'intégration de jeux de données régionaux, on veillera à uniformiser
 
 ## Outils disponibles pour les scripts
 
+Le fichier install.sh (TODO) décrit l'installation des outils utilisés dans les scripts d'intégration.
+
+En principe, ces trois outils suffisent :
+
 * ogr2ogr : Utilitaire de conversion
 * shp2pgsql : Intégration d'un shapefile dans PostGIS
+* psql : Exécution de script .sql (NB : Permet de travailler avec du CSV et des tables temporaires)
+
+* iconv : Conversion d'encodage
+* sed
+
+
+S'il est nécessaire de parser des données, il est possible d'utiliser :
+
+* python3
+* java 1.7 (jar)
+
 
 ## TODO
 
-* Mettre en place un mécanisme de documentation pour les jeux de données (licence, origine, schéma, lien vers les specs. si existante)
-* Dockerfile ou Vagrant pour démonstration, windows et documentation de l'installation des outils
+[ ] Documentation de l'installation des outils (install.sh)
+[ ] Mettre en place un mécanisme de documentation pour les jeux de données (licence, origine, schéma, lien vers les specs. si existante)
+[ ] Dockerfile ou Vagrant pour démonstration (et windows)
+[ ] Poser un cadre pour les jeux de données protégés par des clés ou mots de passe (variable d'environnement)
+[ ] Voir comment on peut récupérer la dernière version d'un jeu de données via l'API de data.gouv.fr (ou demander l'ajout d'une URL latest faisant une redirection sur data.gouv.fr?)
+

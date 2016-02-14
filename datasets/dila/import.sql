@@ -19,7 +19,7 @@ CREATE TEMP TABLE organisme_temp (
 
 \copy organisme_temp FROM 'organisme.csv' DELIMITER ',' CSV HEADER
 
-INSERT INTO organisme (
+INSERT INTO dila.organisme (
     id,
     type,
     nom,
