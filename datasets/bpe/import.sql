@@ -1,15 +1,3 @@
-DROP TABLE IF EXISTS equipement ;
-CREATE TABLE equipement (
-    id serial primary key,
-    annee text,
-    insee text,
-    dciris text,
-    type text,
-    qualite_xy text,
-    geometry geometry(Point,4326)
-) ;
-
-
 CREATE TEMP TABLE bpe_temp (
     AN text,
     REG text,
@@ -24,7 +12,7 @@ CREATE TEMP TABLE bpe_temp (
 
 \copy bpe_temp FROM 'bpe.csv' DELIMITER ',' CSV HEADER
 
-INSERT INTO equipement (
+INSERT INTO bpe.equipement (
     annee,
     insee,
     dciris,
