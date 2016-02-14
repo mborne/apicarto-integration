@@ -11,10 +11,21 @@ Les fichiers XML du jeu de données source sont mis à plat dans des tables.
 * Les plages d'ouvertures sont converties sous forme textuelles
 * Seule la première adresse est prises en compte (pour l'instant)
 
+## Exemple d'application
+
+Récupérer les organismes pour une commune :
+
+```
+SELECT o.* FROM dila.commune c
+	LEFT JOIN dila.organisme o 
+		ON o.id = c.organisme_id 
+	WHERE c.insee = '25349' 
+;
+```
+
 ## TODO
 
-* dila.commune : les organismes rattachés à chaque commune (insee,pivot,organisme_id)
-* dila.adresse : adresse des organismes (actuellement dans dila)
-* documenter et opensourcer le parseur (encore instable, en particulier au niveau des arguments de la commande)
+* dila.adresse : adresse des organismes (actuellement seule la première adresse est utilisée)
+* documenter et opensourcer le parseur (.jar dans bin)
 
 

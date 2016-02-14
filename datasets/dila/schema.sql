@@ -1,5 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS dila ;
 
+-- tables des organismes
 DROP TABLE IF EXISTS dila.organisme ;
 CREATE TABLE dila.organisme (
     id text primary key,
@@ -18,7 +19,12 @@ CREATE TABLE dila.organisme (
     geometry geometry(Point,4326)
 ) ;
 
--- TODO dila.commune
-
+-- table de relation entre les communes et les organismes
+DROP TABLE IF EXISTS dila.commune ;
+CREATE TABLE dila.commune (
+    insee text,             -- code insee de la commune
+    nom text,               -- nom de la commune
+    organisme_id text       -- identifiant de l'organisme
+) ;
 
 

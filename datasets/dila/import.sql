@@ -49,3 +49,8 @@ SELECT
     adresse,
     ST_SetSRID(ST_Point(longitude,latitude),4326)
 FROM organisme_temp;
+
+
+\copy dila.commune FROM 'commune.csv' DELIMITER ',' CSV HEADER
+
+

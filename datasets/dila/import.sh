@@ -13,7 +13,7 @@ mv all_*/ all_latest
 
 # convert to csv
 echo "dila - conversion en CSV..."
-java -cp bin/dila-0.0.1-SNAPSHOT.jar io.github.mborne.dila.cli.ConvertToCSV -input all_latest -output organisme.csv
+java -cp bin/dila-0.0.1-SNAPSHOT.jar io.github.mborne.dila.cli.DilaCLI -input all_latest -output .
 
 # import
 echo "dila - import en base de données..."
