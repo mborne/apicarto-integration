@@ -7,5 +7,6 @@ then
     wget -O gendarmerie.csv $URL
 fi
 
+psql -d apicarto -f schema.sql
 psql -d apicarto -f import.sql
 

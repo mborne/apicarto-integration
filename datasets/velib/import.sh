@@ -8,14 +8,9 @@ then
 fi
 
 unzip -o velib.zip
+shp2pgsql -a -s 4326 -g geometry velib_a_paris_et_communes_limitrophes.shp velib.station > station.sql
 
-shp2pgsql -c -d \
-    -s 4326 \
-    -g geometry \
-    velib_a_paris_et_communes_limitrophes.shp velib > velib.sql
+psql --quiet -d apicarto -f schema.sql
+psql --quiet -d apicarto -f station.sql
 
-rm velib_a_paris_et_communes_limitrophes.*
-
-psql --quiet -d apicarto -f velib.sql
-rm velib.sql
 
