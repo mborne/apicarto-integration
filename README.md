@@ -104,9 +104,8 @@ S'il est nécessaire de parser des données, il est possible d'utiliser :
 
 ## TODO
 
-[ ] Documentation de l'installation des outils (install.sh)
-[ ] Mettre en place un mécanisme de documentation pour les jeux de données (licence, origine, schéma, lien vers les specs. si existante)
-[ ] Dockerfile ou Vagrant pour démonstration (et windows)
-[ ] Poser un cadre pour les jeux de données protégés par des clés ou mots de passe (variable d'environnement)
-[ ] Voir comment on peut récupérer la dernière version d'un jeu de données via l'API de data.gouv.fr (ou demander l'ajout d'une URL latest faisant une redirection sur data.gouv.fr?)
-
+- [ ] Documentation de l'installation des outils (install.sh)
+- [ ] Mettre en place un mécanisme de documentation pour les jeux de données (licence, origine, schéma, lien vers les specs. si existante)
+- [ ] Dockerfile ou Vagrant pour démonstration (et windows)
+- [ ] Poser un cadre pour les jeux de données protégés par des clés ou mots de passe (variable d'environnement)
+- [ ] Voir comment on peut récupérer la dernière version d'un jeu de données via l'API de data.gouv.fr (ou demander l'ajout d'une URL latest faisant une redirection sur data.gouv.fr?)
