@@ -29,7 +29,7 @@ Remarque : PGDATABASE n'est pas supportée pour l'instant.
 ### Version courte
 
 ```
-createdb apicarto
+createdb -E UTF8 apicarto
 psql -d apicarto -c "CREATE EXTENSION postgis"
 cd datasets
 sh import-all.sh
@@ -42,7 +42,7 @@ sh import-all.sh
 ```
 sudo su postgres
 psql -c "CREATE USER apicarto WITH PASSWORD 'secretpassword'"
-createdb -O apicarto apicarto
+createdb -E UTF8 -O apicarto  apicarto
 psql -d apicarto -c "CREATE EXTENSION postgis"
 ```
 
@@ -52,7 +52,6 @@ psql -d apicarto -c "CREATE EXTENSION postgis"
 cd datasets
 PGUSER=apicarto PGPASSWORD=secretpassword sh import-all.sh
 ```
-
 
 ## Comment intégrer un nouveau jeu de données?
 
