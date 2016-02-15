@@ -23,14 +23,14 @@ BEGIN
     THEN
         lon := dg_lon + mn_lon / 60.0 + sc_lon / 3600.0 ;
     ELSE
-        lon := - dg_lon + mn_lon / 60.0 + sc_lon / 3600.0 ;
+        lon := - ( dg_lon + mn_lon / 60.0 + sc_lon / 3600.0 ) ;
     END IF;
     
     IF ns_lat = 'N'
     THEN
         lat := dg_lat + mn_lat / 60.0 + sc_lat / 3600.0 ;
     ELSE
-        lat := - dg_lat + mn_lat / 60.0 + sc_lat / 3600.0 ;
+        lat := - ( dg_lat + mn_lat / 60.0 + sc_lat / 3600.0 ) ;
     END IF;
     
     RETURN ST_SetSRID(ST_Point(lon,lat),4326);
